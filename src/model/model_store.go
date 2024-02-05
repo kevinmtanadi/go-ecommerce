@@ -7,6 +7,9 @@ type Store struct {
 	StoreName   string
 	OwnerID     uint
 	Description string
+	ProvinceID  uint
+	CityID      uint
+	KelurahanID uint
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
 	Status      int       `gorm:"default:10"`

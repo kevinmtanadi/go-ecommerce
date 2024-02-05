@@ -41,13 +41,14 @@ func (ProductAdditionalData) TableName() string {
 }
 
 type ProductRating struct {
-	ID        uint
-	ProductID uint
-	Rating    float64
-	Comment   string
-	UserID    uint
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	ID         uint
+	ProductID  uint
+	Rating     float64
+	Comment    string
+	UserID     uint
+	SoldAmount int
+	CreatedAt  time.Time
+	UpdatedAt  time.Time
 }
 
 func (ProductRating) TableName() string {

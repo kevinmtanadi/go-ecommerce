@@ -19,3 +19,16 @@ type User struct {
 func (User) TableName() string {
 	return "users"
 }
+
+type UserAddress struct {
+	UserID      uint
+	ProvinceID  uint
+	CityID      uint
+	KelurahanID uint
+	FullAddress string
+	Note        string
+}
+
+func (UserAddress) TableName() string {
+	return "user_address"
+}
