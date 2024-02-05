@@ -25,6 +25,7 @@ type Service struct {
 	Template TemplateService
 	MySQL    MySQLService
 	User     UserService
+	Store    StoreService
 }
 
 func NewService(ioc di.Container) *Service {
@@ -32,5 +33,6 @@ func NewService(ioc di.Container) *Service {
 		Template: NewTemplateService(ioc),
 		MySQL:    NewMySQLService(ioc),
 		User:     NewUserService(ioc),
+		Store:    NewStoreService(ioc),
 	}
 }
