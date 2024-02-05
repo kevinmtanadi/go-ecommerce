@@ -1,0 +1,83 @@
+definitions:
+  dtos.RegisterReq:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /template:
+    get:
+      consumes:
+      - application/json
+      description: Template function
+      parameters:
+      - description: content type request
+        enum:
+        - application/json
+        in: header
+        name: Content-Type
+        required: true
+        type: string
+      - in: query
+        name: data
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Template function
+      tags:
+      - template
+  /user/register:
+    post:
+      consumes:
+      - application/json
+      description: Register creates a new user
+      parameters:
+      - description: content type request
+        enum:
+        - application/json
+        in: header
+        name: Content-Type
+        required: true
+        type: string
+      - description: Register creates a new user
+        in: body
+        name: qs
+        required: true
+        schema:
+          $ref: '#/definitions/dtos.RegisterReq'
+      produces:
+      - application/json
+      responses: {}
+      summary: Register creates a new user
+      tags:
+      - user
+  /user/verify:
+    put:
+      consumes:
+      - application/json
+      description: Verify a user
+      parameters:
+      - description: content type request
+        enum:
+        - application/json
+        in: header
+        name: Content-Type
+        required: true
+        type: string
+      - in: query
+        name: user_id
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      summary: Verify a user
+      tags:
+      - user
+swagger: "2.0"

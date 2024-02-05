@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:latest
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+
+  golang:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    ports:
+      - "8000:8000"
